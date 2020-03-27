@@ -11,11 +11,15 @@ public class OfflineExercises {
 	// multChar("Hi-There") returns "HHHiii---TTThhheeerrreee"
 
 	public String multChar(String input) {
+	
+		String multy3Char = "";
 		
-		System.out.println(input.replace("The", "TTThhheee"));
-		System.out.println(input.replace("The", "AAAAAAbbbbbb"));
-		System.out.println(input.replace("The", "HHHiii---TTThhheeerrreee"));
-		return "";
+		for (int i = 0; i < input.length(); i++) {
+			for (int count = 0; count < 3; count++) {
+				multy3Char += input.substring(i, i+1);
+			}
+		}
+		return multy3Char;
 	}
 
 	// Return the string (backwards) that is between the first and last appearance
@@ -45,6 +49,7 @@ public class OfflineExercises {
 	// evenlySpaced(4, 60, 9) returns false
 
 	public boolean evenlySpaced(int a, int b, int c) {
+		
 		return false;
 	}
 
@@ -69,7 +74,16 @@ public class OfflineExercises {
 	// endsDev("devisnotcool") returns false
 
 	public boolean endsDev(String input) {
-		return false;
+		boolean devIs;
+		input = input.toLowerCase();
+		
+		if (input.length() <= 3) {
+			return false;
+		} else {
+			devIs = true;
+		}
+
+		return devIs;
 	}
 
 	// Given a string, return the length of the largest "block" in the string.
@@ -81,7 +95,7 @@ public class OfflineExercises {
 
 	public int superBlock(String input) {
 		
-		System.out.println(input.length());
+		
 		return -1;
 
 	}
@@ -111,8 +125,16 @@ public class OfflineExercises {
 
 	public String fizzBuzz(int arg1) {
 		
-		return null;
-
+		String fizzbuzz = "";
+		
+		if((arg1 % 3) == 0) {
+			fizzbuzz += "fizz";
+		}
+		if((arg1 % 5) == 0) {
+			fizzbuzz += "buzz";
+		}
+		
+		return fizzbuzz;
 	}
 
 	// Given a string split the string into the individual numbers present
